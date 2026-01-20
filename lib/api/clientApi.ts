@@ -1,6 +1,7 @@
 import axios from 'axios';
 import type { Note } from '../../types/note';
 import { api } from './api';
+import { User } from '@/types/user';
 
 export interface FetchNotesParams {
   page: number;
@@ -63,15 +64,6 @@ export type RegisterRequest = {
   email: string;
   password: string;
   userName: string;
-};
-
-export type User = {
-  id: string;
-  email: string;
-  username?: string;
-  photoUrl?: string;
-  createdAt: Date;
-  updatedAt: Date;
 };
 
 export const register = async (data: RegisterRequest) => {

@@ -6,8 +6,10 @@
 
 import { api } from './api';
 import { cookies } from 'next/headers';
-import { FetchNotesParams, FetchNotesResponse, User } from './clientApi';
+import { FetchNotesParams, FetchNotesResponse } from './clientApi';
+
 import { Note } from '@/types/note';
+import { User } from '@/types/user';
 
 export const fetchNoteById = async (id: string): Promise<Note> => {
   const cookie = await cookies();
