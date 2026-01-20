@@ -3,7 +3,7 @@
 import { useRouter } from 'next/navigation';
 import css from './SignInPage.module.css';
 import { useState } from 'react';
-import { login, LoginRequest } from '@/lib/api/clientApi';
+import { getMe, login, LoginRequest } from '@/lib/api/clientApi';
 
 import { useAuthStore } from '@/lib/store/authStore';
 import { ApiError } from '@/types/error';
@@ -15,15 +15,15 @@ export default function SignIn() {
 
   const handleSubmit = async (formData: FormData) => {
     try {
-      const formValues = Object.fromEntries(formData) as LoginRequest;
-      const res = await login(formValues);
+      setError('');
 
-      if (res) {
-        setUser(res);
-        router.push('profile');
-      } else {
-        setError('Invalid email or password');
-      }
+      const formValues = Object.fromEntries(formData) as LoginRequest;
+
+      await login(formValues);
+
+      const me = await getMe();
+      setUser(me);
+      router.replace('/profile');
     } catch (error) {
       setError(
         (error as ApiError).response?.data?.error ??

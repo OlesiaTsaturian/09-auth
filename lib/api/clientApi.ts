@@ -63,7 +63,7 @@ export const fetchNoteById = async (id: string): Promise<Note> => {
 export type RegisterRequest = {
   email: string;
   password: string;
-  userName: string;
+  username: string;
 };
 
 export const register = async (data: RegisterRequest) => {

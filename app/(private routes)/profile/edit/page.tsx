@@ -10,8 +10,6 @@ import { useRouter } from 'next/navigation';
 export default function EditProfilePage() {
   const router = useRouter();
   const { user, setUser } = useAuthStore();
-
-  // Називаємо як у бекенді: username
   const [username, setUsername] = useState('');
   const [isSaving, setIsSaving] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
@@ -67,7 +65,7 @@ export default function EditProfilePage() {
         <h1 className={css.formTitle}>Edit Profile</h1>
 
         <Image
-          src="/user-avatar-logo.svg"
+          src={user.avatar || '/user-avatar-logo.svg'}
           alt="User Avatar"
           width={120}
           height={120}
