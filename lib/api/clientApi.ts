@@ -54,9 +54,9 @@ export const fetchNoteById = async (id: string): Promise<Note> => {
 
 // register +
 // login +
-// logout
-// checkSession
-// getMe
+// logout+
+// checkSession+
+// getMe+
 // updateMe
 
 export type RegisterRequest = {
