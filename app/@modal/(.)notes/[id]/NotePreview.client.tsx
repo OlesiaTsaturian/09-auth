@@ -1,6 +1,7 @@
 'use client';
 
-import NoteDetailsClient from '@/app/notes/[id]/NoteDetails.client';
+import NoteDetailsClient from '@/app/(private routes)/notes/[id]/NoteDetails.client';
+// import NoteDetailsClient from '@/app/notes/[id]/NoteDetails.client';
 import Modal from '@/components/Modal/Modal';
 import { useRouter } from 'next/navigation';
 

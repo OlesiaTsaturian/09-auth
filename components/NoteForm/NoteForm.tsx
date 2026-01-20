@@ -4,7 +4,7 @@ import css from './NoteForm.module.css';
 
 import * as Yup from 'yup';
 import toast, { Toaster } from 'react-hot-toast';
-import { createNote, type CreateParams } from '../../lib/api';
+import { createNote, type CreateParams } from '../../lib/api/clientApi';
 import { useRouter } from 'next/navigation';
 import { useNoteDraftStore } from '@/lib/store/noteStore';
 
